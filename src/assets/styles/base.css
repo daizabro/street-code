@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+html {
+	@media (prefers-reduced-motion: no-preference) {
+		scroll-behavior: smooth;
+	}
+}
+
+body {
+	overflow-x: hidden;
+	font-family: YakuHanJP, "Inter", "Zen Kaku Gothic New", sans-serif;
+}
+
+img,
+video {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+img {
+	/* Chromeに対してのみ image-rendering: -webkit-optimize-contrast; を適用したい */
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+		image-rendering: -webkit-optimize-contrast;
+		/* NOTE: Chromeに対してのみ適用されると言われている (min-resolution: 0.001dpcm) は Safari 16以降 適用されるようになっているため注意 */
+		_::-webkit-full-page-media,
+		_:future,
+		:root & {
+			/* Safariでデフォルト値に戻す */
+			image-rendering: auto;
+		}
+	}
+}

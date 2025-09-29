@@ -12,7 +12,9 @@
     "@astrojs/cloudflare": "^12.6.9",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.14.1",
-    "tailwindcss": "^4.1.13"
+    "kiso.css": "^1.2.2",
+    "tailwindcss": "^4.1.13",
+    "yakuhanjp": "^4.1.1"
   },
   "volta": {
     "node": "22.20.0"

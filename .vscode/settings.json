@@ -19,5 +19,6 @@
 		"editor.defaultFormatter": "astro-build.astro-vscode",
 		"editor.formatOnSave": true
 	},
-	"css.lint.unknownAtRules": "ignore"
+	"css.lint.unknownAtRules": "ignore",
+	"cSpell.words": ["daisyui", "kiso", "yakuhanjp"]
 }
