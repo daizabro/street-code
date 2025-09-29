@@ -1,4 +1,10 @@
 {
-  "recommendations": ["astro-build.astro-vscode"],
-  "unwantedRecommendations": []
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "editorconfig.editorconfig",
+    "biomejs.biome",
+    "streetsidesoftware.code-spell-checker",
+    "jacobcassidy.css-nesting-syntax-highlighting",
+    "yusukehirao.vscode-markuplint"
+  ]
 }
