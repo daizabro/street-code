@@ -1,21 +1,23 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
-export type Props = HTMLAttributes<"a"> & {
+export type Props = Omit<HTMLAttributes<"a">, "target" | "rel"> & {
 	class?: string;
+	isExternal?: boolean;
 };
 
-const { class: className, href, target, rel, ...restProps } = Astro.props;
+const { class: className, href, isExternal, ...restProps } = Astro.props;
 ---
 
 <a
 	class:list={["link", className]}
 	href={href}
-	target={target}
-	rel={rel}
+	target={isExternal ? "_blank" : undefined}
+	rel={isExternal ? "noopener noreferrer" : undefined}
 	{...restProps}
 >
 	<slot />
+	<span class="sr-only">{isExternal && "別窓で開く"}</span>
 </a>
 
 <style scoped>
