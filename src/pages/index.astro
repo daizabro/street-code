@@ -1,8 +1,10 @@
 ---
 import FirstView from "@/components/FirstView.astro";
 import Heading02 from "@/components/Heading02.astro";
+import Heading03 from "@/components/Heading03.astro";
 import LinkList from "@/components/LinkList.astro";
 import Section from "@/components/Section.astro";
+import SkillSet from "@/components/SkillSet.astro";
 import Width from "@/components/Width.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
@@ -39,60 +41,54 @@ import Layout from "@/layouts/Layout.astro";
 			</p>
 
 			<Section type="h3">
-				<h3>Base Skill</h3>
-				<ul>
-					<li>
-						<p>HTML</p>
-						<div
-							class="radial-progress text-primary"
-							style="--value:90;"
-							aria-valuenow="90"
-							role="progressbar"
-						>
-							90%
-						</div>
-					</li>
-					<li>
-						<p>CSS</p>
-						<div
-							class="radial-progress text-primary"
-							style="--value:80;"
-							aria-valuenow="80"
-							role="progressbar"
-						>
-							80%
-						</div>
-					</li>
-					<li>
-						<p>JavaScript（TypeScript）</p>
-						<div
-							class="radial-progress text-primary"
-							style="--value:70;"
-							aria-valuenow="70"
-							role="progressbar"
-						>
-							70%
-						</div>
-					</li>
-				</ul>
+				<Heading03>Base Skill</Heading03>
+				<SkillSet
+					skillList={[
+						{
+							title: "HTML",
+							description: "HTMLの熟練度",
+							proficiency: 90,
+						},
+						{
+							title: "CSS",
+							description: "CSSの熟練度",
+							proficiency: 80,
+						},
+						{
+							title: "JavaScript（TypeScript）",
+							description: "JavaScript（TypeScript）の熟練度",
+							proficiency: 70,
+						},
+					]}
+				/>
 			</Section>
 
 			<Section type="h3">
-				<h3>Frame Work</h3>
-				<ul>
-					<li>Astro</li>
-					<li>React</li>
-					<li>Vue.js</li>
-					<li>Svelte</li>
-				</ul>
-			</Section>
-
-			<Section type="h3">
-				<h3>Template Engin</h3>
-				<ul>
-					<li>Astro</li>
-					<li>11ty</li>
-				</ul>
+				<Heading03>Frame Work</Heading03>
+				<SkillSet
+					skillList={[
+						{
+							title: "Astro",
+							description: "Astroの熟練度",
+							proficiency: 90,
+						},
+						{
+							title: "React",
+							description: "Reactの熟練度",
+							proficiency: 80,
+						},
+						{
+							title: "Vue",
+							description: "Vueの熟練度",
+							proficiency: 70,
+						},
+						{
+							title: "Svelte",
+							description: "Svelteの熟練度",
+							proficiency: 70,
+						},
+					]}
+				/>
 			</Section>
 		</Section>
 	</Width>

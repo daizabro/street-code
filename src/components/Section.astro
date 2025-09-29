@@ -10,9 +10,9 @@ const { class: className, type } = Astro.props;
 <section
 	class:list={[
 		className,
-		type === "h2" && "my-8",
-		type === "h3" && "my-6",
-		type === "h4" && "my-4",
+		type === "h2" && "not-first:mt-16 not-last:mb-16",
+		type === "h3" && "not-first:mt-12 not-last:mb-12",
+		type === "h4" && "not-first:mt-8 not-last:mb-8",
 	]}
 >
 	<slot />
