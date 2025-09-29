@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.9",
+    "@astrojs/rss": "^4.0.12",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.14.1",
     "kiso.css": "^1.2.2",
+    "rss-parser": "^3.13.0",
     "tailwindcss": "^4.1.13",
     "yakuhanjp": "^4.1.1"
   },

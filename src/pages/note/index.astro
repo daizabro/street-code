@@ -1,0 +1,50 @@
+---
+import Heading01 from "@/components/Heading01.astro";
+import Link from "@/components/Link.astro";
+import Width from "@/components/Width.astro";
+import Layout from "@/layouts/Layout.astro";
+import Parser from "rss-parser";
+
+const feed = await new Parser({
+	customFields: {
+		item: ["media:thumbnail", ["media:thumbnail", "noteCreatorImage"]],
+	},
+}).parseURL("https://note.com/dai_zabzab/rss");
+
+console.log(feed.items);
+---
+
+<Layout>
+	<Width>
+		<Heading01>Articles</Heading01>
+		<p>noteに投稿した記事の一覧です。</p>
+		<ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+			{
+				feed.items.map((item) => {
+					return (
+						<li>
+							<a href={item.link} class="card bg-base-100 shadow-sm">
+								<figure>
+									<img
+										src={
+											item["media:thumbnail"] ||
+											"https://placehold.jp/400x200.png"
+										}
+										alt=""
+									/>
+								</figure>
+								<div class="card-body">
+									<h2 class="card-title">{item.title}</h2>
+									<p>{item.contentSnippet}</p>
+								</div>
+							</a>
+						</li>
+					);
+				})
+			}
+		</ul>
+		<p class="text-right">
+			<Link href="https://note.com/dai_zabzab" isExternal>すべての記事へ</Link>
+		</p>
+	</Width>
+</Layout>

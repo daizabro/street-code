@@ -1,7 +1,32 @@
-<div><h1 class="title">Street Code</h1></div>
+<div class="first-view">
+	<div class="first-view__bg">
+		<img src="https://picsum.photos/1000/1000" />
+	</div>
+	<h1 class="first-view__title text-primary">Street Code</h1>
+</div>
 
 <style>
-	.title {
+	.first-view {
+		height: 50vh;
+		position: relative;
+		isolation: isolate;
+		padding: 2.5rem;
+		margin-bottom: 3rem;
+	}
+	.first-view__bg {
+		position: absolute;
+		inset: 0;
+		overflow: hidden;
+		z-index: -1;
+		filter: brightness(0.5);
+		img {
+			width: 100%;
+			height: 100%;
+
+			object-fit: cover;
+		}
+	}
+	.first-view__title {
 		font-family: "Luckiest Guy", cursive;
 		font-size: 3rem;
 	}
