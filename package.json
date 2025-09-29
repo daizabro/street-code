@@ -14,5 +14,8 @@
   },
   "volta": {
     "node": "22.20.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.40.2"
   }
 }
