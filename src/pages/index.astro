@@ -1,7 +1,7 @@
 ---
 import FirstView from "@/components/FirstView.astro";
 import Heading02 from "@/components/Heading02.astro";
-import Link from "@/components/Link.astro";
+import LinkList from "@/components/LinkList.astro";
 import Section from "@/components/Section.astro";
 import Width from "@/components/Width.astro";
 import Layout from "@/layouts/Layout.astro";
@@ -13,42 +13,23 @@ import Layout from "@/layouts/Layout.astro";
 	<Width>
 		<Section type="h2">
 			<Heading02 class="">Link</Heading02>
-			<ul class="list">
-				<li class="list-row">
-					<Link
-						href="https://github.com/daizabro"
-						target="_blank"
-						rel="noopener noreferrer">GitHub</Link
-					>
-				</li>
-				<li class="list-row">
-					<Link href="#" target="_blank" rel="noopener noreferrer">X</Link>
-				</li>
-				<li class="list-row">
-					<Link href="#" target="_blank" rel="noopener noreferrer"
-						>Instagram</Link
-					>
-				</li>
-				<li class="list-row">
-					<Link href="#" target="_blank" rel="noopener noreferrer"
-						>しずかなインターネット</Link
-					>
-				</li>
-				<li class="list-row">
-					<Link href="#" target="_blank" rel="noopener noreferrer">Zenn</Link>
-				</li>
-				<li class="list-row">
-					<Link href="#" target="_blank" rel="noopener noreferrer">YouTube</Link
-					>
-				</li>
-				<li class="list-row">
-					<Link
-						href="https://note.com/dai_zabzab"
-						target="_blank"
-						rel="noopener noreferrer">note</Link
-					>
-				</li>
-			</ul>
+			<LinkList
+				linkList={[
+					{
+						text: "GitHub",
+						href: "https://github.com/daizabro",
+					},
+					{ text: "X", href: "#" },
+					{ text: "Instagram", href: "#" },
+					{ text: "しずかなインターネット", href: "#" },
+					{ text: "Zenn", href: "#" },
+					{ text: "YouTube", href: "#" },
+					{
+						text: "note",
+						href: "https://note.com/dai_zabzab",
+					},
+				]}
+			/>
 		</Section>
 
 		<Section type="h2">

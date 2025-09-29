@@ -1,0 +1,32 @@
+---
+import Link from "@/components/Link.astro";
+export type Props = {
+	class?: string;
+	linkList: {
+		text: string;
+		isExternal?: boolean;
+		href: string;
+	}[];
+};
+const { class: className, linkList } = Astro.props;
+---
+
+<ul class:list={["list", className]}>
+	{
+		linkList.map(({ text, isExternal = true, href }) => (
+			<li class="list-row">
+				<div class="rounded-full size-8 overflow-hidden p-1 bg-white">
+					<img src="https://placehold.jp/50x50.png" alt="" />
+				</div>
+
+				<Link
+					href={href}
+					target={isExternal ? "_blank" : undefined}
+					rel={isExternal ? "noopener noreferrer" : undefined}
+				>
+					{text}
+				</Link>
+			</li>
+		))
+	}
+</ul>
