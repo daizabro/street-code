@@ -42,9 +42,7 @@ import Layout from "@/layouts/Layout.astro";
 
 		<Section type="h2">
 			<Heading02>Skill Set</Heading02>
-			<p>
-				<small>※ あくまで個人的な判断での指標となります。</small>
-			</p>
+			<p>主観的な評価で、熟練度を%で表現しています。</p>
 
 			<Section type="h3">
 				<Heading03>Base Skill</Heading03>
@@ -52,17 +50,20 @@ import Layout from "@/layouts/Layout.astro";
 					skillList={[
 						{
 							title: "HTML",
-							description: "HTMLの熟練度",
+							description:
+								"アクセシビリティを意識したマークアップをすることができます。",
 							proficiency: 90,
 						},
 						{
 							title: "CSS",
-							description: "CSSの熟練度",
+							description:
+								"ピクセルパーフェクトを意識しつつ、実際の表現に即したコーディングをすることが可能です。",
 							proficiency: 80,
 						},
 						{
 							title: "JavaScript（TypeScript）",
-							description: "JavaScript（TypeScript）の熟練度",
+							description:
+								"基本的なDOM操作やAPI通信、非同期処理に対応することができます。",
 							proficiency: 70,
 						},
 					]}

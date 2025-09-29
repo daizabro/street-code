@@ -10,9 +10,10 @@ const { skillList } = Astro.props;
 	{
 		skillList.map(({ description, title, proficiency }) => (
 			<li>
-				<div class="card bg-base-100 image-full shadow-xs rounded-sm">
+				<div class="card bg-base-100 image-full shadow-xs rounded-sm border-1 h-full">
 					<figure>
 						<img
+							class="!brightness-20 !h-full"
 							src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
 							alt=""
 						/>
@@ -24,7 +25,7 @@ const { skillList } = Astro.props;
 							class="radial-progress text-primary mx-auto"
 							style={`--value:${proficiency};`}
 						>
-							{proficiency}
+							{proficiency}%
 						</div>
 					</div>
 				</div>
