@@ -1,0 +1,39 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+export type Props = HTMLAttributes<"a"> & {
+	class?: string;
+};
+
+const { class: className, href, target, rel, ...restProps } = Astro.props;
+---
+
+<a
+	class:list={["link", className]}
+	href={href}
+	target={target}
+	rel={rel}
+	{...restProps}
+>
+	<slot />
+</a>
+
+<style scoped>
+	.link[target="_blank"] {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		column-gap: 0.25rem;
+		align-items: center;
+		&:after {
+			content: "";
+			mask-image: var(--icon-open-in-new);
+			mask-size: contain;
+			mask-repeat: no-repeat;
+			mask-position: center;
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			background-color: currentColor;
+		}
+	}
+</style>

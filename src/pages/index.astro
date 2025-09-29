@@ -1,57 +1,118 @@
 ---
+import FirstView from "@/components/FirstView.astro";
+import Heading02 from "@/components/Heading02.astro";
+import Link from "@/components/Link.astro";
+import Section from "@/components/Section.astro";
 import Width from "@/components/Width.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout>
-	<div>
-		<h1>Street Code</h1>
-	</div>
+	<FirstView />
 
 	<Width>
-		<section class="prose">
-			<h2>リンク</h2>
-			<ul>
-				<li><a href="#">GitHub</a></li>
-				<li><a href="#">X</a></li>
-				<li><a href="#">Instagram</a></li>
-				<li><a href="#">しずかなインターネット</a></li>
-				<li><a href="#">Zenn</a></li>
-				<li><a href="#">YouTube</a></li>
-				<li><a href="#">Note</a></li>
+		<Section type="h2">
+			<Heading02 class="">Link</Heading02>
+			<ul class="list">
+				<li class="list-row">
+					<Link
+						href="https://github.com/daizabro"
+						target="_blank"
+						rel="noopener noreferrer">GitHub</Link
+					>
+				</li>
+				<li class="list-row">
+					<Link href="#" target="_blank" rel="noopener noreferrer">X</Link>
+				</li>
+				<li class="list-row">
+					<Link href="#" target="_blank" rel="noopener noreferrer"
+						>Instagram</Link
+					>
+				</li>
+				<li class="list-row">
+					<Link href="#" target="_blank" rel="noopener noreferrer"
+						>しずかなインターネット</Link
+					>
+				</li>
+				<li class="list-row">
+					<Link href="#" target="_blank" rel="noopener noreferrer">Zenn</Link>
+				</li>
+				<li class="list-row">
+					<Link href="#" target="_blank" rel="noopener noreferrer">YouTube</Link
+					>
+				</li>
+				<li class="list-row">
+					<Link
+						href="https://note.com/dai_zabzab"
+						target="_blank"
+						rel="noopener noreferrer">note</Link
+					>
+				</li>
 			</ul>
-		</section>
+		</Section>
 
-		<section>
-			<h2>スキルセット</h2>
-			<p>あくまで個人的な判断での指標となります。</p>
+		<Section type="h2">
+			<Heading02>Skill Set</Heading02>
+			<p>
+				<small>※ あくまで個人的な判断での指標となります。</small>
+			</p>
 
-			<section class="prose">
-				<h3>ベーススキル</h3>
+			<Section type="h3">
+				<h3>Base Skill</h3>
 				<ul>
-					<li>HTML</li>
-					<li>CSS</li>
-					<li>JavaScript（TypeScript）</li>
+					<li>
+						<p>HTML</p>
+						<div
+							class="radial-progress text-primary"
+							style="--value:90;"
+							aria-valuenow="90"
+							role="progressbar"
+						>
+							90%
+						</div>
+					</li>
+					<li>
+						<p>CSS</p>
+						<div
+							class="radial-progress text-primary"
+							style="--value:80;"
+							aria-valuenow="80"
+							role="progressbar"
+						>
+							80%
+						</div>
+					</li>
+					<li>
+						<p>JavaScript（TypeScript）</p>
+						<div
+							class="radial-progress text-primary"
+							style="--value:70;"
+							aria-valuenow="70"
+							role="progressbar"
+						>
+							70%
+						</div>
+					</li>
 				</ul>
-			</section>
+			</Section>
 
-			<section class="prose">
-				<h3>フレームワーク</h3>
+			<Section type="h3">
+				<h3>Frame Work</h3>
 				<ul>
 					<li>Astro</li>
 					<li>React</li>
 					<li>Vue.js</li>
 					<li>Svelte</li>
 				</ul>
-			</section>
+			</Section>
 
-			<section class="prose">
-				<h3>テンプレートエンジン</h3>
+			<Section type="h3">
+				<h3>Template Engin</h3>
 				<ul>
 					<li>Astro</li>
 					<li>11ty</li>
 				</ul>
-			</section>
-		</section>
+			</Section>
+		</Section>
 	</Width>
 </Layout>

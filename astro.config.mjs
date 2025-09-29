@@ -6,10 +6,13 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
-  adapter: cloudflare(),
-
-  vite: {
-    plugins: [tailwindcss()],
-  },
+	output: "server",
+	adapter: cloudflare(),
+	server: {
+		port: 3333,
+		open: true,
+	},
+	vite: {
+		plugins: [tailwindcss()],
+	},
 });

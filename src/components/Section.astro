@@ -1,0 +1,19 @@
+---
+export type Props = {
+	class?: string;
+	type: "h2" | "h3" | "h4";
+};
+
+const { class: className, type } = Astro.props;
+---
+
+<section
+	class:list={[
+		className,
+		type === "h2" && "my-8",
+		type === "h3" && "my-6",
+		type === "h4" && "my-4",
+	]}
+>
+	<slot />
+</section>
