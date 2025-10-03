@@ -1,5 +1,13 @@
 # Astro Starter Kit: Basics
 
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
 ```sh
 npm create astro@latest -- --template basics
 ```
