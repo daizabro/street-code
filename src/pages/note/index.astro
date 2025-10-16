@@ -5,6 +5,8 @@ import Width from "@/components/Width.astro";
 import Layout from "@/layouts/Layout.astro";
 import Parser from "rss-parser";
 
+export const prerender = true;
+
 const feed = await new Parser({
 	customFields: {
 		item: ["media:thumbnail", ["media:thumbnail", "noteCreatorImage"]],
